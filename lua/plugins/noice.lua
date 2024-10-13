@@ -26,5 +26,6 @@ return {
 			},
 		})
     vim.keymap.set('n', '<leader>nh', ':Noice history<CR>')
+    vim.keymap.set('n', '<leader>nd', ':Noice dismiss<CR>')
 	end,
 }
