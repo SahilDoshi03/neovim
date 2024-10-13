@@ -25,5 +25,6 @@ return {
 				lsp_doc_border = false,
 			},
 		})
+    vim.keymap.set('n', '<leader>nh', ':Noice history<CR>')
 	end,
 }
