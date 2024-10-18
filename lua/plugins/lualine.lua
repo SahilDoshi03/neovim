@@ -59,6 +59,14 @@ return {
 					lualine_c = {
 						{ "filename", path = 1 }, -- 0 = just filename, 1 = relative path, 2 = absolute path
 					},
+					lualine_x = {
+						{
+							function()
+								return vim.fn.reg_recording() ~= "" and "Recording @" .. vim.fn.reg_recording() or ""
+							end,
+						},
+            'filetype'
+					},
 					lualine_y = { "os.date('%a %d %b %H:%M')", "data", "require'lsp-status'.status()" },
 				},
 			})
