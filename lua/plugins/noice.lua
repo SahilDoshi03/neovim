@@ -4,11 +4,12 @@ return {
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
+		"nvim-telescope/telescope.nvim",
 	},
 	config = function()
-    require("notify").setup({
-      background_colour = "#000000",
-    })
+		require("notify").setup({
+			background_colour = "#000000",
+		})
 		require("noice").setup({
 			lsp = {
 				override = {
@@ -25,7 +26,8 @@ return {
 				lsp_doc_border = false,
 			},
 		})
-    vim.keymap.set('n', '<leader>nh', ':Noice history<CR>')
-    vim.keymap.set('n', '<leader>nd', ':Noice dismiss<CR>')
+		require("telescope").load_extension("noice")
+		vim.keymap.set("n", "<leader>nh", ":Noice history<CR>")
+		vim.keymap.set("n", "<leader>nd", ":Noice dismiss<CR>")
 	end,
 }

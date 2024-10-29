@@ -12,6 +12,9 @@ return {
 		"rafamadriz/friendly-snippets",
 	},
 	{
+		"hrsh7th/cmp-cmdline",
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			print(vim.inspect(require("luasnip").snippets))
@@ -40,6 +43,26 @@ return {
 				}, {
 					{ name = "buffer" },
 				}),
+			})
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" }, -- Ignore these commands
+						},
+					},
+				}),
+			})
+			-- `/` cmdline setup.
+			cmp.setup.cmdline("/", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
 			})
 		end,
 	},
