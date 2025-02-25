@@ -16,7 +16,8 @@ return {
 					"graphql",
 					"pylsp",
 					"gopls",
-          "cssls"
+          "cssls",
+          "sqlls"
 				},
 			})
 

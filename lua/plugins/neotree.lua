@@ -16,8 +16,8 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>tr", ":Neotree filesystem reveal left<CR>")
       vim.keymap.set("n", "<leader>tn", ":tabnext<CR>")
+      vim.keymap.set("n", "<leader>tr", ":Neotree filesystem reveal left<CR>")
       vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
     end,
   },
