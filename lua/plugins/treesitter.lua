@@ -19,6 +19,7 @@ return {
           "markdown_inline",
           "graphql",
           "python",
+          "go",
           "sql"
         },
 
