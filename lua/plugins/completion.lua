@@ -5,9 +5,9 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 	},
-	{
-		"github/copilot.vim",
-	},
+	-- {
+	-- 	"github/copilot.vim",
+	-- },
 	{
 		"saadparwaiz1/cmp_luasnip",
 	},

@@ -4,9 +4,9 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- select entire buffer
-vim.keymap.set("n","<C-a>","ggVG")
+vim.keymap.set("n", "<C-a>", "ggVG")
 -- select entire line
-vim.keymap.set("n","<C-l>","^v$")
+vim.keymap.set("n", "<C-l>", "^v$")
 
 
 vim.keymap.set("n", "J", "mzJ`z")
@@ -46,5 +46,5 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<cr>")
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+  vim.cmd("so")
 end)
