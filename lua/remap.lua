@@ -38,13 +38,19 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<cr>}<esc>oreturn err<esc>")
-
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>")
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<cr>")
 
 vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
+
+-- copy the diagnostic messages (error, warnings) etc
+vim.keymap.set('n', '<leader>e', function()
+  local d = vim.diagnostic.get(0, { lnum = vim.fn.line('.') - 1 })
+  if d[1] then
+    vim.fn.setreg('+', d[1].message)
+    print("Copied error to clipboard: " .. d[1].message)
+  else
+    print("No diagnostic on this line")
+  end
+end)
+
